@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@100..800&display=swap");
+
+* {
+  font-family: "Anek Devanagari", sans-serif;
+}
+
+.body {
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: aquamarine;
+  height: 50px;
+}
+
+.logo {
+}
+
+.navegacion {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__link {
+  text-align: center;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+.informacion {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  padding: 4% 8% 4% 4%;
+  background-color: blue;
+}
+
+.informacion__texto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.informacion__texto__titulo {
+}
+
+.informacion__texto__parrafo {
+}
+
+.informacion__imagen {
+  width: 30%;
+  height: auto;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.ubicacion { }
+
+.ubicacion__titulo { }
+
+.ubicacion__informacion { }
+
+.ubicacion__informacion__mapa { }
+
+.ubicacion__informacion__texto { }
+
+.ubicacion__informacion__texto__titulo { }
+
+.ubicacion__informacion__texto__parrafo { }

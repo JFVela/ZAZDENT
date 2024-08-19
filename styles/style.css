@@ -1,12 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@100..800&display=swap");
 
 :root {
-  --dark-celeste: #6482AD;
-  --light-celeste: #7FA1C3;
-  --dark-gray: #E2DAD6;
-  --light-gray: #F5EDED;
+  --dark-celeste: #6482ad;
+  --light-celeste: #7fa1c3;
+  --dark-gray: #e2dad6;
+  --light-gray: #f5eded;
 }
-
 
 * {
   font-family: "Anek Devanagari", sans-serif;
@@ -37,6 +36,12 @@
   font-size: 24px;
   font-weight: 700;
   color: var(--dark-celeste);
+  transition: transform 0.3s ease;
+}
+
+.header__link:hover {
+  color: black;
+  transform: scale(1.1);
 }
 
 .informacion {
@@ -57,6 +62,8 @@
 .informacion__texto__titulo {
   font-size: 48px;
   font-weight: 600;
+  color: black;
+  text-align: center;
 }
 
 .informacion__texto__parrafo {
@@ -70,7 +77,6 @@
   border-radius: 1.5rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   object-fit: cover;
-
 }
 
 .ubicacion {
@@ -131,7 +137,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f0f0f0;
+  background-color: var(--light-gray);
   border: 1px solid #ddd;
   border-radius: 5px;
   padding: 10px 15px;
@@ -139,14 +145,31 @@
   text-decoration: none;
   width: 20%;
   gap: 16px;
+  color: black;
+  transition: transform 0.3s ease;
 }
 
+/*Hover para los botones de las redes sociales*/
 .botonesRedes:hover {
-  background-color: #e0e0e0; 
+  color: var(--light-gray);
+  transform: scale(1.05); /* Agranda el botón un 10% */
 }
 
-.bi-facebook {
-  color: aqua;
+.botonTelefono:hover {
+  background-color: orange;
+}
+
+.botonWssp:hover {
+  background-color: #25d366;
+}
+.botonFace:hover {
+  background-color: #0866ff;
+}
+.botonIG:hover {
+  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4);
+}
+.botonTT:hover {
+  background: linear-gradient(45deg, #25f4dd, #fe2c55);
 }
 
 /*Carta de presentacion del equipo dental*/
@@ -162,19 +185,17 @@
   justify-content: space-between;
 }
 
-
 .card {
-  width: 49%; 
+  width: 49%;
   height: auto;
   background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
   border-radius: 20px;
   transition: all 0.3s;
 }
 
-
 .card2 {
   height: 100%;
-  background-color: #1a1a1a;
+  background-color: var(--dark-gray);
   border-radius: 20px;
   transition: all 0.2s;
 }
@@ -221,6 +242,7 @@
 }
 .especialidad {
   margin: 0;
+  color: var(--light-celeste);
 }
 
 .equipo__parrafo__Texto {
@@ -242,4 +264,16 @@
 
 .footer__licencia {
   margin: 0;
+}
+
+.terminoCondiciones {
+  color: var(--light-gray);
+}
+
+.terminoCondiciones {
+  color: var(--light-gray);
+}
+
+.terminoCondiciones:hover {
+  color: black;
 }

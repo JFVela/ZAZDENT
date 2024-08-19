@@ -47,9 +47,13 @@
 }
 
 .informacion__texto__titulo {
+    font-size: 48px;
+    font-weight: 600;
 }
 
 .informacion__texto__parrafo {
+    font-size: 24px;
+    font-weight: 500;
 }
 
 .informacion__imagen {
@@ -59,16 +63,75 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.ubicacion { }
+.ubicacion { 
+    display: flex;
+    flex-direction: column;
+    background-color: blueviolet;
+    padding: 2%;
+}
 
-.ubicacion__titulo { }
+.ubicacion__titulo {
+    font-size: 40px;
+    font-weight: 700;
+    margin: 0 0 auto 0;
+ }
 
-.ubicacion__informacion { }
+.ubicacion__informacion { 
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
 
-.ubicacion__informacion__mapa { }
+.ubicacion__informacion__mapa { 
+    width: 40%;
+    height: 400px;
+}
 
-.ubicacion__informacion__texto { }
 
-.ubicacion__informacion__texto__titulo { }
+.ubicacion__informacion__texto__titulo {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0;
+}
 
-.ubicacion__informacion__texto__parrafo { }
+.ubicacion__informacion__texto__parrafo { 
+    font-size: 24px;
+    font-weight: 500;
+    margin: 0;
+}
+
+
+.contactanos {
+    text-align: center; /* Centra todo el contenido */
+    padding: 20px; /* Añade espacio interno */
+}
+
+.contactanos__titulo {
+    font-size: 24px; /* Tamaño del título */
+    margin-bottom: 20px; /* Espacio debajo del título */
+}
+
+.contactanos__botones{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+.botonesRedes {
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    background-color: #f0f0f0; 
+    border: 1px solid #ddd;
+    border-radius: 5px; 
+    padding: 10px 15px; 
+    margin: 5px; 
+    text-decoration: none;
+    width: 20%;
+    gap: 16px ;
+}
+
+.botonesRedes:hover {
+    background-color: #e0e0e0; /* Cambia el color de fondo al pasar el ratón */
+}
+

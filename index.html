@@ -12,13 +12,28 @@
 <body class="body">
     <header class="header">
         <img src="/image/Logo.png" alt="logo de Zazdent" class="logo">
-        <nav class="navegacion">
-            <a class="header__link" href="">Inicio</a>
-            <a class="header__link" href="">Ubicación</a>
-            <a class="header__link" href="">Contacto</a>
-            <a class="header__link" href="">Equipo</a>
+        <nav id="accordion" class="navegacion">
+            <div class="hamburger link">
+                <input class="checkbox" type="checkbox" />
+                <svg fill="none" viewBox="0 0 50 50" height="50" width="50">
+                    <path class="lineTop line" stroke-linecap="round" stroke-width="4" stroke="black" d="M6 11L44 11">
+                    </path>
+                    <path stroke-linecap="round" stroke-width="4" stroke="black" d="M6 24H43" class="lineMid line">
+                    </path>
+                    <path stroke-linecap="round" stroke-width="4" stroke="black" d="M6 37H43" class="lineBottom line">
+                    </path>
+                </svg>
+            </div>
+            <ul class="menu submenu">
+                <li><a class="header__link" href="">Inicio</a></li>
+                <li><a class="header__link" href="">Ubicación</a></li>
+                <li><a class="header__link" href="">Contacto</a></li>
+                <li><a class="header__link" href="">Equipo</a></li>
+            </ul>
         </nav>
+
     </header>
+
     <div class="informacion">
         <div class="informacion__texto">
             <h1 class="informacion__texto__titulo">
@@ -64,23 +79,28 @@
     <div class="contactanos">
         <h2 class="contactanos__titulo">Contáctenos</h2>
         <div class="contactanos__botones">
-            <a href="" class="botonesRedes botonTelefono"><i class="bi bi-telephone"></i> Teléfono</a>
-            <a href="" class="botonesRedes botonWssp"><i class="bi bi-whatsapp"></i> WhatsApp</a>
-            <a href="" class="botonesRedes botonFace"><i class="bi bi-facebook"></i>Facebook</a>
-            <a href="" class="botonesRedes botonIG"><i class="bi bi-instagram"></i> Instagram</a>
-            <a href="" class="botonesRedes botonTT"><i class="bi bi-tiktok"></i> TikTok</a>
+            <a href="" target="_blank" rel="noopener noreferrer" class="botonesRedes botonTelefono"><i
+                    class="bi bi-telephone"></i> Teléfono</a>
+            <a href="https://bit.ly/4cFPsi4" target="_blank" rel="noopener noreferrer" class="botonesRedes botonWssp"><i
+                    class="bi bi-whatsapp"></i> WhatsApp</a>
+            <a href="" target="_blank" rel="noopener noreferrer" class="botonesRedes botonFace"><i
+                    class="bi bi-facebook"></i>Facebook</a>
+            <a href="" target="_blank" rel="noopener noreferrer" class="botonesRedes botonIG"><i
+                    class="bi bi-instagram"></i> Instagram</a>
+            <a href="https://www.tiktok.com/@zazdent1" target="_blank" rel="noopener noreferrer"
+                class="botonesRedes botonTT"><i class="bi bi-tiktok"></i> TikTok</a>
         </div>
     </div>
     <div class="apartado__equipo">
         <h2 class="equipoTitulo">Nuestro equipo </h2>
         <div class="equipo__grupo">
-            <div class="card">
-                <div class="card2">
-                    <div class="card2__informacion">
-                        <div class="card2__circular">
+            <div class="cartas">
+                <div class="cartas2">
+                    <div class="cartas2__informacion">
+                        <div class="cartas2__circular">
                             <img src="/image/foto.jpg" alt="" class="fotoPerfil">
                         </div>
-                        <div class="card2__texto">
+                        <div class="cartas2__texto">
                             <h3 class="nombreEmpleado">Juan Díaz</h3>
                             <h4 class="especialidad">Odontólogo</h4>
                         </div>
@@ -91,13 +111,13 @@
                     </p>
                 </div>
             </div>
-            <div class="card">
-                <div class="card2">
-                    <div class="card2__informacion">
-                        <div class="card2__circular">
+            <div class="cartas">
+                <div class="cartas2">
+                    <div class="cartas2__informacion">
+                        <div class="cartas2__circular">
                             <img src="/image/foto.jpg" alt="" class="fotoPerfil">
                         </div>
-                        <div class="card2__texto">
+                        <div class="cartas2__texto">
                             <h3 class="nombreEmpleado">Kira</h3>
                             <h4 class="especialidad">Jefe</h4>
                         </div>
@@ -108,13 +128,13 @@
                     </p>
                 </div>
             </div>
-            <div class="card">
-                <div class="card2">
-                    <div class="card2__informacion">
-                        <div class="card2__circular">
+            <div class="cartas">
+                <div class="cartas2">
+                    <div class="cartas2__informacion">
+                        <div class="cartas2__circular">
                             <img src="/image/foto.jpg" alt="" class="fotoPerfil">
                         </div>
-                        <div class="card2__texto">
+                        <div class="cartas2__texto">
                             <h3 class="nombreEmpleado">Kira</h3>
                             <h4 class="especialidad">Jefe</h4>
                         </div>
@@ -131,6 +151,37 @@
         <p class="footer__licencia">© 2024 Clínica Dental Dr. María Rodríguez. Todos los derechos reservados.</p>
         <a href="" class="terminoCondiciones">Términos y condiciones</a>
     </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function () {
+            var Accordion = function (el, multiple) {
+                this.el = el || {};
+                this.multiple = multiple || false;
+
+                // Variables privadas
+                var links = this.el.find('.link');
+                // Evento
+                links.on('click', { el: this.el, multiple: this.multiple }, this.dropdown);
+            }
+
+            Accordion.prototype.dropdown = function (e) {
+                var $el = e.data.el;
+                var $this = $(this);
+                var $next = $this.next();
+
+                $next.slideToggle();
+                $this.parent().toggleClass('open');
+
+                if (!e.data.multiple) {
+                    $el.find('.submenu').not($next).slideUp().parent().removeClass('open');
+                }
+            }
+
+            var accordion = new Accordion($('#accordion'), false);
+        });
+    </script>
+
 </body>
 
 </html>

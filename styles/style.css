@@ -18,6 +18,7 @@
   justify-content: space-between;
   background-color: var(--light-gray);
   height: 70px;
+  padding: 0 2.5% 0 2.5%;
 }
 
 .navegacion {
@@ -34,6 +35,7 @@
   transform: 0.2s;
   position: relative;
 }
+
 .hamburger .checkbox {
   position: absolute;
   opacity: 0;
@@ -41,74 +43,48 @@
   width: 100%;
   cursor: pointer;
 }
+
 .line {
   transition: 0.5s;
   stroke-width: 6px;
   stroke: black;
 }
+
 .lineTop {
   stroke-dasharray: 40 40;
   stroke-dashoffset: 25;
 }
+
 .lineBottom {
   stroke-dasharray: 40 40;
   stroke-dashoffset: 60;
 }
+
 .lineMid {
   stroke-dasharray: 40 40;
 }
-.hamburger .checkbox:checked + svg .line {
+
+.hamburger .checkbox:checked+svg .line {
   stroke: crimson;
 }
-.hamburger .checkbox:checked + svg .lineTop {
+
+.hamburger .checkbox:checked+svg .lineTop {
   stroke-dashoffset: 0;
   transform-origin: left;
   transform: rotateZ(45deg) translate(-7px, -5px);
 }
-.hamburger .checkbox:checked + svg .lineMid {
+
+.hamburger .checkbox:checked+svg .lineMid {
   stroke-dashoffset: 40;
 }
-.hamburger .checkbox:checked + svg .lineBottom {
+
+.hamburger .checkbox:checked+svg .lineBottom {
   stroke-dashoffset: 0;
   transform-origin: left;
   transform: rotateZ(-45deg) translate(-5px, 5px);
 }
 
-/*Menú desplegable*/
-.link {
-  cursor: pointer;
-  display: block;
-  padding: 15px;
-  color: #4D4D4D;
-  font-size: 14px;
-  font-weight: 700;
-  border-bottom: 1px solid #CCC;
-  position: relative;
-  transition: all 0.4s ease;
-}
 
-.submenu {
-  display: none;
-  background: #444359;
-  font-size: 14px;
-}
-
-.submenu li {
-  border-bottom: 1px solid #4b4a5e;
-}
-
-.submenu a {
-  display: block;
-  color: #d9d9d9;
-  padding: 12px;
-  padding-left: 42px;
-  transition: all 0.25s ease;
-}
-
-.submenu a:hover {
-  background: #b63b4d;
-  color: #FFF;
-}
 
 /*Estilo para mi lista*/
 
@@ -215,8 +191,10 @@
 }
 
 .contactanos__titulo {
-  font-size: 24px; /* Tamaño del título */
-  margin-bottom: 20px; /* Espacio debajo del título */
+  font-size: 24px;
+  /* Tamaño del título */
+  margin-bottom: 20px;
+  /* Espacio debajo del título */
 }
 
 .contactanos__botones {
@@ -244,7 +222,8 @@
 /*Hover para los botones de las redes sociales*/
 .botonesRedes:hover {
   color: var(--light-gray);
-  transform: scale(1.05); /* Agranda el botón un 10% */
+  transform: scale(1.05);
+  /* Agranda el botón un 10% */
 }
 
 .botonTelefono:hover {
@@ -254,12 +233,15 @@
 .botonWssp:hover {
   background-color: #25d366;
 }
+
 .botonFace:hover {
   background-color: #0866ff;
 }
+
 .botonIG:hover {
   background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4);
 }
+
 .botonTT:hover {
   background: linear-gradient(45deg, #25f4dd, #fe2c55);
 }
@@ -323,6 +305,7 @@
   height: 100%;
   object-fit: cover;
 }
+
 .cartas2__texto {
   display: flex;
   flex-direction: column;
@@ -332,6 +315,7 @@
 .nombreEmpleado {
   margin: 0;
 }
+
 .especialidad {
   margin: 0;
   color: var(--light-celeste);
@@ -371,17 +355,35 @@
 }
 
 @media screen and (max-width: 900px) {
+
+  .navegacion {
+    flex-direction: column;
+  }
+
+  .menu {
+    /*desaparece*/
+    display: none;
+    /*Pone encima el menu de las letras*/
+    position: relative;
+    align-items: flex-end;
+    flex-direction: column;
+    background-color: var(--light-gray);
+  }
+
   .hamburger {
     display: block;
   }
 
+  /*Informacion relevante*/
   .informacion__texto__titulo {
     text-align: start;
   }
+
   .informacion {
     flex-direction: column;
     align-items: center;
   }
+
   .informacion__imagen {
     width: 80%;
   }
@@ -393,6 +395,7 @@
     gap: 40px;
     align-items: center;
   }
+
   .ubicacion__informacion__mapa {
     width: 100%;
   }
@@ -402,6 +405,7 @@
     flex-wrap: wrap;
     justify-content: center;
   }
+
   .botonesRedes {
     width: 40%;
     flex-direction: row;
@@ -413,12 +417,13 @@
     flex-direction: column;
     align-items: center;
   }
+
   .cartas {
     width: 100%;
     height: auto;
   }
+
   .cartas2 {
     padding: 10px;
-
   }
 }
